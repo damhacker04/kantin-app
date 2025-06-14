@@ -56,5 +56,21 @@ public function login(Request $request)
     ]);
 }
 
+public function update(Request $request, $id)
+    {
+        $data = $request->validate([
+            'nama_lengkap'  => 'required|string|max:100',
+            'email' => 'required|email|max:100|unique:pembeli,email,'.$id.',id_pembeli',
+        ]);
+
+        $pembeli = Pembeli::findOrFail($id);
+        $pembeli->update($data);
+
+        return response()->json([
+            'success' => true,
+            'pembeli' => $pembeli,
+        ]);
+    }
+
 
 }

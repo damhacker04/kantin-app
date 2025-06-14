@@ -18,3 +18,4 @@ Route::get('/menus', [MenuController::class, 'index']); // opsional
 Route::get('/menus/{id}', [MenuController::class, 'show']);
 Route::get  ('pembayaran', [PembayaranController::class, 'index']);
 Route::get ('pesanan', [PesananController::class, 'index']);
+Route::put('pembeli/{id_pembeli}', [PembeliAuthController::class, 'update']);

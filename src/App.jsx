@@ -25,6 +25,7 @@ import PaymentSuccessPage from "./Pages/PaymentSuccessPage";
 import ProfilePage from "./Pages/ProfilePage";
 import LogoutPage from "./Pages/LogoutPage";
 import ChangeProfilePage from "./Pages/ChangeProfilePage";
+import ChangePasswordPage from "./Pages/ChangePasswordPage";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/Profil" element={<ProfilePage />} />
           <Route path="/Logout" element={<LogoutPage />} />
           <Route path="/ChangeProfile" element={<ChangeProfilePage />} />
+          <Route path="/ChangePassword" element={<ChangePasswordPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

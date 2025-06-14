@@ -118,6 +118,7 @@ export const AuthProvider = ({ children }) => {
   }
 };
 
+  const updateUser = (payload) => setUser((u) => ({ ...u, ...payload }));
 
   const logout = () => {
     setUser(null);
@@ -131,6 +132,7 @@ export const AuthProvider = ({ children }) => {
         register,
         login,
         logout,
+        updateUser,
       }}
     >
       {children}
