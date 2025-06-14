@@ -22,6 +22,9 @@ import { CartProvider } from "./CartContext";
 import CheckoutPage from "./Pages/CheckoutPage";
 import PaymentPage from "./Pages/PaymentPage";
 import PaymentSuccessPage from "./Pages/PaymentSuccessPage";
+import ProfilePage from "./Pages/ProfilePage";
+import LogoutPage from "./Pages/LogoutPage";
+import ChangeProfilePage from "./Pages/ChangeProfilePage";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -43,6 +46,9 @@ function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/payment" element={<PaymentPage />} />
           <Route path="/PaymentSuccess" element={<PaymentSuccessPage />} />
+          <Route path="/Profil" element={<ProfilePage />} />
+          <Route path="/Logout" element={<LogoutPage />} />
+          <Route path="/ChangeProfile" element={<ChangeProfilePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

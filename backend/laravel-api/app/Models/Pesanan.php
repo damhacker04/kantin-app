@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Carbon;
+
 
 
 class Pesanan extends Model
@@ -22,10 +24,6 @@ class Pesanan extends Model
     ];
 
     /* ----- relasi ke detail_pesanan ----- */
-    public function detail(): HasMany
-    {
-        return $this->hasMany(DetailPesanan::class, 'id_pesanan', 'id_pesanan');
-    }
 
     /* helper: buat pesanan + tanggal default */
     public static function buat(array $attrs = []): static
@@ -34,5 +32,15 @@ class Pesanan extends Model
         $attrs['status']          = $attrs['status']          ?? 'Pending';
 
         return static::create($attrs);
+    }
+
+      public function kantin(): BelongsTo   // ← nama bebas: kantin / toko
+    {
+        return $this->belongsTo(Kantin::class, 'id_toko', 'id_toko');
+    }
+
+    public function detail(): HasMany
+    {
+        return $this->hasMany(DetailPesanan::class, 'id_pesanan', 'id_pesanan');
     }
 }

@@ -54,7 +54,7 @@ class PesananController extends Controller
         // $buyerId = auth()->id();
         // $query   = Pesanan::with('detail.menu')->where('id_pembeli', $buyerId);
 
-        $query = Pesanan::with('detail');   // sementara ambil semua + relasi detail
+        $query = Pesanan::with('detail.menu.toko');   // sementara ambil semua + relasi detail
         // $query = Pesanan::with('detail.menu.toko');
 
         // opsional filter status ?status=Process

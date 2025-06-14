@@ -34,7 +34,7 @@ const LogoutPage = () => {
               <div className="font-medium">Keluar Akun</div>
             </Link>
             <Link
-              to="/profile"
+              to="/Profil"
               className="flex h-10 w-full items-center justify-center rounded-lg bg-gray-200 text-black hover:bg-gray-400"
             >
               <div className="font-medium">Batal</div>

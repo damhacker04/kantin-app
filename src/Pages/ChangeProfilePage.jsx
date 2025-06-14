@@ -47,52 +47,30 @@ const ChangeProfilePage = () => {
         <div className="mx-auto flex w-full max-w-lg flex-1 flex-col items-start space-x-4">
           <div className="mb-4 pl-4 text-2xl font-bold">Ubah Profile</div>
           <div className="w-full p-2">
-            <div className="pl-4 font-medium">Nama</div>
-            <div>
-              <FormInput
-                placeholder="Masukkan Nama"
-                type="text"
-                className="w-full rounded-lg border p-3 focus:ring-2 focus:ring-emerald-500"
-                required
-              />
-            </div>
-          </div>
-          <div className="w-full p-2">
-            <div className="pl-4 font-medium">Nim</div>
-            <div>
-              <FormInput
-                placeholder="Masukkan Nim"
-                type="text"
-                className="w-full rounded-lg border p-3 focus:ring-2 focus:ring-emerald-500"
-                required
-              />
-            </div>
-          </div>
-          <div className="w-full p-2">
-            <div className="pl-4 font-medium">Email</div>
-            <div>
-              <FormInput
-                placeholder="Masukkan Email"
-                type="text"
-                className="w-full rounded-lg border p-3 focus:ring-2 focus:ring-emerald-500"
-                required
-              />
-            </div>
-          </div>
-          <div className="w-full p-2">
-            <div className="pl-4 font-medium">No Telepon</div>
-            <div>
-              <FormInput
-                placeholder="Masukkan No Telepon"
-                type="text"
-                className="w-full rounded-lg border p-3 focus:ring-2 focus:ring-emerald-500"
-                required
-              />
-            </div>
-          </div>
+  <div className="pl-4 font-medium">Nama</div>
+  <div>
+    <FormInput
+      placeholder="Masukkan Nama"
+      type="text"
+      className="w-full rounded-lg border p-3 focus:ring-2 focus:ring-emerald-500"
+      required
+    />
+  </div>
+</div>
+<div className="w-full p-2">
+  <div className="pl-4 font-medium">Email</div>
+  <div>
+    <FormInput
+      placeholder="Masukkan Email"
+      type="text"
+      className="w-full rounded-lg border p-3 focus:ring-2 focus:ring-emerald-500"
+      required
+    />
+  </div>
+</div>
           <div className="hidden lg:bottom-4 lg:z-10 lg:flex lg:w-full lg:max-w-lg lg:flex-col lg:items-end lg:rounded-lg lg:border-2 lg:p-2 lg:text-white">
             <Link
-              to="/Profile"
+              to="/Profil"
               className="mt-3 block w-full rounded-lg bg-emerald-500 py-2 text-center text-white hover:bg-emerald-600"
             >
               Simpan Perubahan
