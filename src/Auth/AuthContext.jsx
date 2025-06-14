@@ -118,7 +118,12 @@ export const AuthProvider = ({ children }) => {
   }
 };
 
-  const updateUser = (payload) => setUser((u) => ({ ...u, ...payload }));
+  const updateUser = (partial) =>
+   setUser((prev) => {
+      const next = { ...prev, ...partial };
+      localStorage.setItem("currentUser", JSON.stringify(next));
+      return next;
+    });
 
   const logout = () => {
     setUser(null);

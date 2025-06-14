@@ -18,7 +18,7 @@ const ChangeProfilePage = () => {
   /* isi form dg data pengguna yg login */
   useEffect(() => {
     if (user) {
-      setNama(user.nama ?? "");
+      setNama(user.nama_lengkap ?? "");
       setEmail(user.email ?? "");
     }
   }, [user]);
@@ -29,12 +29,17 @@ const ChangeProfilePage = () => {
       setSaving(true);
       await axios.put(
         `http://localhost:8000/api/pembeli/${user.id_pembeli}`,
-        { nama, email },
+        { nama_lengkap: nama.trim(),           // ✅ sesuai Laravel
+         email:       email.trim() },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
       // sinkronkan context auth di front‑end
-      updateUser({ nama, email });
+      updateUser({
+  ...user,
+  nama_lengkap: nama.trim(),
+  email:       email.trim(),
+});
 
       alert("Profil berhasil di‑update");
       navigate("/Profil");
