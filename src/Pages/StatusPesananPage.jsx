@@ -35,13 +35,13 @@ const StatusPesananPage = () => {
         const res = await axios.get("http://localhost:8000/api/pesanan");
         /* ubah bentuk sesuai StatusCard */
         const mapped = (res.data || []).map((p) => ({
-          id:     `INV-${p.id_pesanan}`,        // contoh invoice
-          status: LABEL[p.status] ?? p.status,  // label UI
-          store:  p.nama_toko   ?? "—",       // sesuaikan kolom api
+          id:     `INV-${p.id_pesanan}`,
+          status: LABEL[p.status] ?? p.status,
+          store:  p.nama_toko   ?? "—",
           date:   new Date(p.tanggal_pesanan).toLocaleDateString("id-ID",
                     { day:"2-digit", month:"short", year:"numeric" }),
           total:  Number(p.total),
-          items:  p.detail?.map(d => `${d.nama_menu} x${d.qty}`) ?? [],
+          items:  p.detail?.map(d => `${d.menu?.nama_menu ?? '-'} x${d.jumlah}`) ?? [],
           action: LABEL[p.status] === "Belum Bayar" ? "Bayar Sekarang" : null,
         }));
         setOrders(mapped);
